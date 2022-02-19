@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import toolsMap from '../../modules/toolsmap';
 import { disableImageSmoothing, drawGrid, resizeImageData, copyImageData } from '../../utils/canvasUtils';
 
-const minPixelGridSize = 9,
+const minPixelGridSize = 7,
       LEFT_CLICK = 0;
 
 class Surface extends Component {

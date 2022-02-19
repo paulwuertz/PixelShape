@@ -41,7 +41,7 @@ test('framesOrder =>', (expect) => {
   });
 
   expect.test('::addFrame', (expect) => {
-    const action = addFrame(32, 32);
+    const action = addFrame(72, 40);
     expect.deepEqual(
       framesOrder({ framesOrderArray: ['frame_0'] }, action),
       {

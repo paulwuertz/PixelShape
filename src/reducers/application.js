@@ -24,8 +24,8 @@ const defaultConsts = {
 const initialState = {
   projectGuid: uuid(),
   size: {
-    width: 32,
-    height: 32
+    width: 72,
+    height: 40
   },
   pixelSize: 20,
   optimalPixelSize: 20,

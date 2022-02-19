@@ -39,7 +39,7 @@ test('framesCollection =>', (expect) => {
   });
 
   expect.test('::addFrame', (expect) => {
-    const action = addFrame(32, 32),
+    const action = addFrame(72, 40),
           next = framesCollection(initialState, action);
 
     expect.equal(Object.keys(next).length, 2, 'Should add new frame');

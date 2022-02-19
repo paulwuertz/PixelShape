@@ -29,8 +29,8 @@ const state = {
       application: {
         projectGuid: 'random',
         size: {
-          width: 32,
-          height: 32
+          width: 72,
+          height: 40
         },
         pixelSize: 10,
         optimalPixelSize: 20,
