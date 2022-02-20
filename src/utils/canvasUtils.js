@@ -28,27 +28,27 @@ export const drawGrid = (context, space, gutter) => {
 
   context.clearRect(0, 0, width, height);
 
-  //for (const parameters of [[1, '#333', gutter], [8, '#000', gutter * 2]]) {
-  let i = 0;
-  const [nth, color, boldness] = [1, '#000', gutter];
-  context.beginPath();
-  while (i < width) {
-    context.moveTo(i, 0);
-    context.lineTo(i, height);
-    i += space * nth;
-  }
+  for (const parameters of [[1, '#333', gutter], [8, '#000', 6 * gutter]]) {
+    let i = 0;
+    const [nth, color, boldness] = parameters;
+    context.beginPath();
+    while (i < width) {
+      context.moveTo(i, 0);
+      context.lineTo(i, height);
+      i += space * nth;
+    }
 
-  i = 0;
-  while (i < height) {
-    context.moveTo(0, i);
-    context.lineTo(width, i);
-    i += space * nth;
-  }
+    i = 0;
+    while (i < height) {
+      context.moveTo(0, i);
+      context.lineTo(width, i);
+      i += space * nth;
+    }
 
-  context.lineWidth = boldness;
-  context.strokeStyle = color;
-  context.stroke();
-  //}
+    context.lineWidth = boldness;
+    context.strokeStyle = color;
+    context.stroke();
+  }
 };
 
 export const createCanvas = (width, height) => {
