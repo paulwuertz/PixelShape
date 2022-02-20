@@ -27,18 +27,18 @@ const initialState = {
     width: 72,
     height: 40
   },
-  pixelSize: 20,
-  optimalPixelSize: 20,
+  pixelSize: 15,
+  optimalPixelSize: 15,
   surfaceConstraints: {
     width: 2000,
     height: 2000
   },
   resetPalette: false,
-  grid: false,
+  grid: true,
   stretch: false,
   anchor: 'oo',
   downloadOptions: {
-    includeGif: true,
+    includeGif: false,
     includeSpritesheet: true,
     includeProject: true,
     includePalette: true

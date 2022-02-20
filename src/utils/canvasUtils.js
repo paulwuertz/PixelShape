@@ -24,29 +24,31 @@ export const disableImageSmoothing = context => {
 };
 
 export const drawGrid = (context, space, gutter) => {
-  let i = 0;
-  const width = context.canvas.width,
-        height = context.canvas.height;
+  const width = context.canvas.width, height = context.canvas.height;
 
   context.clearRect(0, 0, width, height);
 
+  //for (const parameters of [[1, '#333', gutter], [8, '#000', gutter * 2]]) {
+  let i = 0;
+  const [nth, color, boldness] = [1, '#000', gutter];
   context.beginPath();
   while (i < width) {
     context.moveTo(i, 0);
     context.lineTo(i, height);
-    i += space;
+    i += space * nth;
   }
 
   i = 0;
   while (i < height) {
     context.moveTo(0, i);
     context.lineTo(width, i);
-    i += space;
+    i += space * nth;
   }
 
-  context.lineWidth = gutter;
-  context.strokeStyle = '#000';
+  context.lineWidth = boldness;
+  context.strokeStyle = color;
   context.stroke();
+  //}
 };
 
 export const createCanvas = (width, height) => {
