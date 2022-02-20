@@ -1,13 +1,15 @@
 import {
   SET_TOOL,
   SET_COLOR,
+  SET_BASE_TEMP,
   SET_SIZE
 } from '../actions/tools';
 
 const initialState = {
   tool: 'Brush',
   color: '#1B2631',
-  size: 1
+  size: 1,
+  baseTemp: 25
 };
 
 function tools (state = initialState, action) {
@@ -18,6 +20,8 @@ function tools (state = initialState, action) {
       return { ...state, color: action.color };
     case SET_SIZE:
       return { ...state, size: action.size };
+    case SET_BASE_TEMP:
+      return { ...state, baseTemp: action.baseTemp };
     default:
       return state;
   }
