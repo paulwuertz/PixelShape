@@ -48,6 +48,23 @@ export const drawGrid = (context, space, gutter) => {
     context.lineWidth = boldness;
     context.strokeStyle = color;
     context.stroke();
+
+    context.strokeStyle = '#aaa';
+    context.lineWidth = 1;
+    context.fillStyle = '#000';
+
+    const pixeloff = 2;
+    const s2 = space / 3;
+    const s4 = space / 5;
+
+    for (let x = 0; x <= width; x++) {
+        for (let y = 0; y <= height; y++) {
+            let pathStr = `M ${space * x + s4},${space * y + s4} v ${s2} h ${2 * s4} v -${s2}`;
+            // console.log(pathStr);
+            let p = new Path2D(pathStr);
+            context.stroke(p);
+        }
+    }
   }
 };
 
