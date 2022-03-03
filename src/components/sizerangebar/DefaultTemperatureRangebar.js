@@ -1,7 +1,6 @@
 import './sizerangebar.styl';
 
 import React, { Component } from 'react';
-import classNames from 'classnames';
 
 class DefaultTemperatureRangebar extends Component {
   constructor (...args) {
@@ -14,8 +13,6 @@ class DefaultTemperatureRangebar extends Component {
   }
 
   render () {
-    const classes = classNames('defaulttemperaturerangebar__value');
-
     return (
       <div className="defaulttemperaturerangebar">
         <div className="defaulttemperaturerangebar__label">Base Temperature</div>

@@ -2,6 +2,7 @@ export const SET_TOOL = 'SET_TOOL';
 export const SET_COLOR = 'SET_COLOR';
 export const SET_SIZE = 'SET_SIZE';
 export const SET_BASE_TEMP = 'SET_BASE_TEMP';
+export const SET_SELECTION_MODE = 'SET_SELECTION_MODE';
 
 export const setTool = tool => ({
   type: SET_TOOL,
@@ -21,4 +22,9 @@ export const setSize = size => ({
 export const setBaseTemp = baseTemp => ({
   type: SET_BASE_TEMP,
   baseTemp
+});
+
+export const setSelectionMode = selectionMode => ({
+  type: SET_SELECTION_MODE,
+  selectionMode
 });
