@@ -1,11 +1,12 @@
 import {connect} from 'react-redux';
 
-import {getSidebarVisibility} from '../../selectors';
+import {getSidebarVisibility, getSelectionMode} from '../../selectors';
 
 import RightSidebar from '../../components/sidebar/RightSidebar';
 
 const mapStateToProps = state => ({
-  visible: getSidebarVisibility(state)
+  visible: getSidebarVisibility(state),
+  selectionMode: getSelectionMode(state)
 });
 
 const RightSidebarContainer = connect(

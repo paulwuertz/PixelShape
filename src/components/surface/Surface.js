@@ -35,11 +35,18 @@ class Surface extends Component {
     this.ctx = this._canvas.getContext('2d');
     this.buffer = this._buffer.getContext('2d');
     this.grid = this._grid.getContext('2d');
+    this.alpha = this._alpha.getContext('2d');
     this.applyAllContextInformation();
     this.applyImageData();
     disableImageSmoothing(this.ctx);
     disableImageSmoothing(this.buffer);
     drawGrid(this.grid, this.props.pixelSize | 0, 0.5);
+
+    this.alpha.fillStyle = 'white';
+    this.alpha.globalAlpha = 0.7;
+    this.alpha.fillRect(
+      0, 0, this.props.imageSize.width * this.props.pixelSize, this.props.imageSize.height * this.props.pixelSize
+    );
   }
 
   componentDidUpdate (prevProps) {
@@ -58,6 +65,10 @@ class Surface extends Component {
 
   shouldShowGrid () {
     return this.props.gridShown && (this.props.pixelSize > minPixelGridSize);
+  }
+
+  shouldShowAlpha () {
+    return this.props.alphaShown;
   }
 
   updateFrameImageData () {
@@ -164,6 +175,13 @@ class Surface extends Component {
             height={this.props.surfaceHeight}
             width={this.props.surfaceWidth}
             style={{display: this.shouldShowGrid() ? 'block' : 'none'}}>
+          </canvas>
+          <canvas
+            className="alpha-canvas"
+            ref={c => this._alpha = c}
+            height={this.props.surfaceHeight}
+            width={this.props.surfaceWidth}
+            style={{display: this.shouldShowAlpha() ? 'block' : 'none'}}>
           </canvas>
           <canvas
             className="handle-layer"

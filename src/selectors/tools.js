@@ -7,7 +7,7 @@ export function getToolSettings (state) {
 }
 
 export function getSelectionMode (state) {
-  return state.selectionMode;
+  return state.tools.selectionMode;
 }
 
 export function getCurrentColor (state) {

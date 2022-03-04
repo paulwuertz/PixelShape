@@ -10,6 +10,7 @@ import {
   getSurfaceHeight,
   getImageSize,
   getGridState,
+  getSelectionMode,
   getProjectGuid
 } from '../../selectors';
 import {setTempColor} from '../../actions/palette';
@@ -27,6 +28,7 @@ const mapStateToProps = state => ({
   pixelSize: getPixelSize(state),
   surfaceWidth: getSurfaceWidth(state),
   surfaceHeight: getSurfaceHeight(state),
+  alphaShown: getSelectionMode(state),
   gridShown: getGridState(state)
 });
 

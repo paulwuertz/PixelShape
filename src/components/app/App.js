@@ -35,7 +35,7 @@ class App extends Component {
           <Surface />
           <Framebar />
         </div>
-        <RightSidebar />
+        <RightSidebar selectionMode={this.props.selectionMode} />
       </div>
     );
   }

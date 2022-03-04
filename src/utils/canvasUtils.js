@@ -58,7 +58,7 @@ export const drawGrid = (context, space, gutter) => {
 
     for (let x = 0; x <= width; x++) {
       for (let y = 0; y <= height; y++) {
-        let pathStr = `M ${space * x + s4},${space * y + s4} v ${s2} h ${2 * s4} v -${s2}`;
+        let pathStr = `M ${space * x + s4},${space * y + s4} v ${s2} h ${s4} v -${s2} h ${s4} v ${s2}`;
         // console.log(pathStr);
         let p = new Path2D(pathStr);
         context.stroke(p);
